@@ -31,7 +31,7 @@ var Token = 0 ;
 var ordertransfername;
 var ordertransferprice;
 
-app.get("/",(req,res)=>{
+app.get("/",function(req,res){
     res.render("main");
 });
 
