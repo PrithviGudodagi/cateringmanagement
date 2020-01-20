@@ -36,10 +36,11 @@ var ordertransferprice;
         
     });
 
+  
 
 
 
-app.get("/out",function(req,res){
+app.get("/out",(req,res)=>{
     Token = Token + 1;
     Order.find(function(err,order){
         if(err){
@@ -59,14 +60,15 @@ app.get("/out",function(req,res){
                         console.log(err);
                 }else{
                     console.log("saved to allorders");
-                    res.render("checkout" , { token : Token });
+                  
                 }
                 })
-            })
+            });
         }
    
         
-    })
+    });
+    res.render("checkout" , { token : Token });
 });
     
 
