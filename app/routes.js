@@ -14,7 +14,9 @@ var Token = 0 ;
 var ordertransfername;
 var ordertransferprice;
 
-
+app.get("/",(req,res)=>{
+    res.render("main");
+});
 
     app.get("/index",(req,res)=>{
         Food.find({},function(err,food){
