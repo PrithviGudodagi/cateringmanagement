@@ -16,6 +16,9 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended : true}))
 app.use(methodoverride("_method"));
 
+app.get("/",(req,res)=>{
+    res.render("main");
+});
 
 require("./app/routes.js")(app);
 
