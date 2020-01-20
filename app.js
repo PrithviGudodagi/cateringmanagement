@@ -35,7 +35,7 @@ app.get("/",function(req,res){
     res.render("main");
 });
 
-    app.get("/index",(req,res)=>{
+    app.get("/index",function(req,res){
         Food.find({},function(err,food){
             if(err){
                 console.log(err);
@@ -46,7 +46,7 @@ app.get("/",function(req,res){
         
     });
 
-    app.get("/cart",(req,res)=>{
+    app.get("/cart",function(req,res){
         Order.find({},function(err,orders){
             if(err){
                 console.log(err);
