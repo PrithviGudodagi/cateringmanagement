@@ -112,7 +112,7 @@ app.get("/out",(req,res)=>{
         res.render("stock");
     });
 
-    app.get("/:id",(req,res)=>{
+    app.get("/index/:id",(req,res)=>{
         Food.findById(req.params.id,function(err,Foods){
             orderfoodinputname = Foods.name;
             orderfoodinputprice = Foods.price;
@@ -128,7 +128,7 @@ app.get("/out",(req,res)=>{
                 }else{
                     console.log("data successfully added to orders");
                     alert("added");
-                    res.redirect("/");
+                    res.redirect("/index");
                 }
             });
 
