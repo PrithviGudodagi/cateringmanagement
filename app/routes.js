@@ -125,12 +125,12 @@ app.get("/out",(req,res)=>{
     });
 
     app.get("/orderscheck/:token",(req,res)=>{
+        console.log(req.params.token);
         Allorder.find({token : req.params.token },(err,allorder)=>{
             if(err){
                 console.log(err);
             }else{
                 console.log("allorders displayed");
-                console.log(req.params.token);
                 res.render("orderscheck",{ allorder : allorder });
             }
         })
