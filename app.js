@@ -12,7 +12,7 @@ mongoose.connect(configDB.url,{
     useNewUrlParser: true , useUnifiedTopology: true
 });
 
-require("./app/routes.js")(app);
+
 
 
 app.use(express.static("public"));
@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.urlencoded({extended : true}))
 app.use(methodoverride("_method"));
 
-
+require("./app/routes.js")(app);
 
 app.listen(port);
 console.log('Hosted '+ port);
