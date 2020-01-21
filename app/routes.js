@@ -20,6 +20,7 @@ app.get("/",function(req,res){
 });
 
     app.get("/index",function(req,res){
+
         Food.find({},function(err,food){
             if(err){
                 console.log(err);
@@ -29,6 +30,7 @@ app.get("/",function(req,res){
         });
         
     });
+    
 
     app.get("/cart",function(req,res){
         Order.find({},function(err,orders){
@@ -105,6 +107,16 @@ app.get("/out",(req,res)=>{
         });
     });
 
+    app.get("/check",(req,res)=>{
+        Order.find({},(err,orders)=>{
+            orders.forEach(function(order){
+                order.remove();
+                console.log("deleted successfully orders");
+            })
+        })
+        res.redirect("/index");
+    });
+
     app.get("/allorders",(req,res)=>{
         res.render("allorders")
     });
@@ -146,5 +158,5 @@ app.get("/out",(req,res)=>{
             }
         })
     });
- 
+
 };
