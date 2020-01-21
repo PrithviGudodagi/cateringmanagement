@@ -118,8 +118,14 @@ app.get("/out",(req,res)=>{
     app.get("/allorders",(req,res)=>{
         Allorder.find({},(err,allorder)=>{
             allorder.forEach(function(err,order){
-                res.render("allorders",{allorder : allorder});
+                if(err){
+                    console.log(err);
+                }else{
+                    console.log("displyed all orders successfully");
+                }
+                
             })
+            res.render("allorders",{allorder : allorder});
         })
       
     });
