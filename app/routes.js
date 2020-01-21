@@ -131,8 +131,9 @@ app.get("/out",(req,res)=>{
                 console.log(err);
             }else{
                 console.log("allorders displayed");
-                res.render("orderscheck",{ allorder : allorder });
+                
             }
+            res.render("orderscheck",{ allorder : allorder });
         })
                 
     });
