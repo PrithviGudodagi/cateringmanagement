@@ -1,4 +1,3 @@
-var alert = require("alert-node");
 
 var express     = require('express');
 var app         = express();

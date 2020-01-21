@@ -1,4 +1,4 @@
-var alert = require("alert-node");
+
 
 module.exports=function(app){
 
@@ -99,7 +99,7 @@ app.get("/out",(req,res)=>{
             if(err){
                 console.log(err);
             }else{
-                alert("food is added in database");
+                console.log("food is added in database");
                 res.redirect("food");
             }
         });
@@ -128,7 +128,6 @@ app.get("/out",(req,res)=>{
                     console.log(err);
                 }else{
                     console.log("data successfully added to orders");
-                    alert("added");
                     res.redirect("/index");
                 }
             });
