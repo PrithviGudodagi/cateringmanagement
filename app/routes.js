@@ -116,7 +116,25 @@ app.get("/out",(req,res)=>{
 
 
     app.get("/allorders",(req,res)=>{
-        res.render("allorders")
+        Allorder.find({},(err,allorder)=>{
+            allorder.forEach(function(err,order){
+                res.render("allorders",{allorder : allorder});
+            })
+        })
+      
+    });
+
+    app.get("/orderscheck/:token",(req,res)=>{
+        Allorder.find({token : req.params.token },(err,allorder)=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log("allorders displayed");
+                console.log(req.params.token);
+                res.render("orderscheck",{ allorder : allorder });
+            }
+        })
+                
     });
 
     app.get("/stock",(req,res)=>{

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="row">
+        <% allorder.forEach(function(allorder){  %>
+
+            <div class="card shadow-sm col-md-3">
+                <div class="card-header">
+                  <h4>Token Number </h4>
+                </div>
+
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><%= allorder.token %> </h1>
+              <a href="/orderscheck/<%= allorder.token %>" type="button" name="name<%= allorder.token %>"  class="btn btn-lg btn-block btn-outline-primary">Check Orders</a>
+        
+             
+             </div>
+            </div>
+         
+        
+      <% }); %>
+         
+      </div>
+
+
+    
+</body>
+</html>
