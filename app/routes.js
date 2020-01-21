@@ -16,6 +16,7 @@ var Order = require("./models/order.js");
 var Allorder = require("./models/allorder.js");
 
 app.get("/",function(req,res){
+    
     res.render("main");
 });
 
@@ -75,6 +76,12 @@ app.get("/out",(req,res)=>{
    
         
     });
+    Order.find({},(err,orders)=>{
+        orders.forEach(function(order){
+            order.remove();
+            console.log("deleted successfully orders");
+        })
+    })
     res.render("checkout" , { token : Token });
 });
     
@@ -107,15 +114,6 @@ app.get("/out",(req,res)=>{
         });
     });
 
-    app.get("/check",(req,res)=>{
-        Order.find({},(err,orders)=>{
-            orders.forEach(function(order){
-                order.remove();
-                console.log("deleted successfully orders");
-            })
-        })
-        res.redirect("/index");
-    });
 
     app.get("/allorders",(req,res)=>{
         res.render("allorders")
