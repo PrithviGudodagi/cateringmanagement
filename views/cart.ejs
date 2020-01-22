@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+ 
+  </head>
 <body>
+  
 
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Catering Management</h5>
-    <a href="/">back</a>
+    <h5 class="my-0 mr-md-auto font-weight-normal head-edit">Catering Management</h5>
+    <a class="btn waves-effect waves-light" href="/">back</a>
     
     
   </div>
@@ -26,14 +37,14 @@
 
             <% order.forEach(function(order){ %>
 
-              <div class="table-responsive">
+              <div class="table-responsive edit-t">
                 <table class="table table-striped table-sm">
                   <tbody>
                     <tr>
-                      <td > Food Name :  <%= order.ordername %> <span class="right floated"> Price : <%=order.orderprice %> INR </span> 
-                        <form action="/<%=order._id %>?_method=DELETE" method="POST">
-                            <button><i class="fas fa-trash"></i></button>
-                       </form></td>
+                      <td class="" > Food Name :  <%= order.ordername %> <br> <br> <span> Price : <%=order.orderprice %> INR </span> <span> <form action="/<%=order._id %>?_method=DELETE" method="POST">
+                      <hr>  <button class="ui negative basic button change">DELETE</button>
+                   </form></span>
+                        </td>
                     </tr>
                     
                   </tbody>
@@ -46,7 +57,7 @@
           
 
           
-           <a href="/out" class="btn btnlarge">Checkout</a>
+           <a  href="/out" class="btn waves-effect waves-light" >Checkout</a>
 
             
    

@@ -1,3 +1,5 @@
+
+
 .dh2{
     margin-top: 40px;
   margin-left: 10px;
@@ -11,4 +13,14 @@
 .e{
     margin-left: 30%;
     margin-top: 50px;
+}
+
+.edit-t{
+    font-family: 'Bitter', serif;
+    font-size: 24px;
+}
+
+.head-edit{
+    font-family: 'Acme', sans-serif;
+    font-size: 30px;
 }

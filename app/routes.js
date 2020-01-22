@@ -57,7 +57,6 @@ app.get("/out",(req,res)=>{
             order.forEach(function(order){
                 ordertransfername = order.ordername;
                 ordertransferprice = order.orderprice;
-    
                 var allorder = new Allorder({
                     allordername : ordertransfername,
                     allorderprice : ordertransferprice,
@@ -76,6 +75,8 @@ app.get("/out",(req,res)=>{
    
         
     });
+
+
     Order.find({},(err,orders)=>{
         orders.forEach(function(order){
             order.remove();
@@ -91,7 +92,7 @@ app.get("/out",(req,res)=>{
     });
 
     app.get("/food",(req,res)=>{
-        res.render("food")
+        res.render("food");
     });
 
     app.post("/food",(req,res)=>{
@@ -131,8 +132,8 @@ app.get("/out",(req,res)=>{
     });
 
     app.get("/orderscheck/:token",(req,res)=>{
-        console.log(req.params.token);
         Allorder.find({token : req.params.token },(err,allorder)=>{
+            console.log(req.body.checkurl);
             if(err){
                 console.log(err);
             }else{

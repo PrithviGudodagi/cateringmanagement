@@ -9,31 +9,29 @@
 </head>
 <body>
 
+
+
     <div class="row">
         <% allorder.forEach(function(allorder){  %>
 
-            <div class="card shadow-sm col-md-3">
-                <div class="card-header">
-                  <h4>Token Number </h4>
-                </div>
-
-            <div class="card-body">
-               
-              <h1 class="card-title pricing-card-title"><%= allorder.token %> </h1>
-           
-             
-              <a href="/orderscheck/<%= allorder.token %>" type="button"   class="btn btn-lg btn-block btn-outline-primary">Check Orders</a>
+                    <div class="card shadow-sm col-md-3">
+                        <div class="card-header">
+                          <h4>Token Number </h4>
+                        </div>
         
-             
-             </div>
-            </div>
-         
-        
+                    <div class="card-body">
+                       
+                      <h1 class="card-title pricing-card-title"><%= allorder.token %> </h1>
+                   
+                     
+                      <a href="/orderscheck/<%= allorder.token %>" type="button"   class="btn btn-lg btn-block btn-outline-primary">Check Orders</a>
+                
+                     
+                     </div>
+                    </div>
       <% }); %>
          
       </div>
-
-
     
 </body>
 </html>
