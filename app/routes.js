@@ -20,6 +20,10 @@ app.get("/",function(req,res){
     res.render("main");
 });
 
+app.get("/aboutme",(req,res)=>{
+    res.render("aboutme");
+});
+
     app.get("/index",function(req,res){
 
         Food.find({},function(err,food){
